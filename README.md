@@ -1,6 +1,6 @@
 # understanding
 
-A Claude Code / Cursor skill that turns agent-created work — diffs, features, plans, investigations, architecture — into a short [Sideshow](https://github.com/grqg-dev) session optimized for *understanding*, not coverage.
+A Claude Code / Cursor skill that turns agent-created work — diffs, features, plans, investigations, architecture — into a short [Sideshow](https://github.com/modem-dev/sideshow) session optimized for *understanding*, not coverage.
 
 Invoke with `/understanding` (or ask to understand what an agent made). The skill is invoke-only; it does not auto-trigger.
 
@@ -18,7 +18,7 @@ Or copy `SKILL.md` into your skills directory.
 
 ## Requires
 
-- [`sideshow`](https://github.com/grqg-dev) CLI on `PATH`
+- [`sideshow`](https://github.com/modem-dev/sideshow) CLI on `PATH`
 - A running sideshow surface (`sideshow serve`), or `SIDESHOW_URL` set
 
 The skill calls `sideshow agent-howto` and `sideshow guide` at session start. It does not embed those docs.
