@@ -82,22 +82,35 @@ does not unlock the explanation.
 
 Make the causal model concrete:
 
-1. State: “We used to X; now we Y because Z.”
-2. Use one tiny representative example with real-looking toy data.
-3. Show old behavior and new behavior explicitly.
-4. Name the most likely wrong assumption — “you might expect X; actually Y,
+1. Open with a contrasting pair: two near-identical cases with real-looking
+   toy data that differ only in the dimension that matters — the same input
+   through the old path and the new path, or the same flow with one
+   condition flipped. Let the reader see the difference before it is named.
+2. Then state the rule the pair exposes: “We used to X; now we Y because Z.”
+3. Name the most likely wrong assumption — “you might expect X; actually Y,
    because Z” — and correct it explicitly. Skip this if no plausible
    misconception exists; never invent one.
-5. Include a diagram or figure when the idea concerns flow, state, structure,
-   ownership, timing, or transformation.
-6. Bridge the idea to the 1–3 most important files, symbols, decisions, or
+4. Include a diagram or figure when the idea concerns flow, state, structure,
+   ownership, timing, or transformation, following the diagram contract
+   below.
+5. Bridge the idea to the 1–3 most important files, symbols, decisions, or
    outputs.
 
-Choose examples that expose the reason for the work, not merely the happy path.
+Choose cases that expose the reason for the work, not merely the happy path.
+
+#### Diagram contract
+
+- Put labels on the elements they describe, never in a legend the eye must
+  round-trip to.
+- Give the causal path the single accent treatment; keep everything else
+  visually muted.
+- Delete anything the surrounding prose does not reference.
 
 ### 4. Walkthrough
 
-Trace one representative scenario end to end. At each step explain:
+Trace one representative scenario end to end. Label each step with its
+subgoal — a 2–4 word statement of intent (“establish the invariant”, “hand
+off ownership”) — then explain:
 
 - what happens
 - why it happens
@@ -165,7 +178,8 @@ silently — the user is never quizzed.
 - Every post opens with its takeaway and teaches one concept that earns its
   place.
 - Concrete examples replace abstract prose where possible.
-- Visuals reveal a relationship; they are not decorative.
+- Visuals reveal a relationship and follow the diagram contract; they are
+  not decorative.
 - Actual artifact names anchor the model without overwhelming it.
 - An expert can skip background while a newcomer can still follow.
 - Feedback is checked and meaningful revisions update existing posts.
