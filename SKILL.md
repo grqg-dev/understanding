@@ -16,6 +16,23 @@ core idea, predict important behavior, and know where to look next.
 
 Do not quiz or test the user.
 
+## Voice
+
+Every sentence you write for this skill — on a Sideshow card or, when no
+Sideshow surface is used, as plain chat markdown — follows the No AI slop
+rules from `AGENT_REPORT_STYLE.md`: no banned words, no puffery, no colon
+reveals, no throat-clearing openers, no summary-recap endings, active voice,
+concrete over abstract. Self-check each post against that file's **Words to
+cut** and **Patterns to cut** before publishing or sending it. This applies
+regardless of the surface — the structure below changes with the medium, the
+sentence-level quality bar does not.
+
+Use whichever copy applies to where you're working: if the current project
+has its own `AGENT_REPORT_STYLE.md` (check the repo root), follow that one —
+it may carry project-specific additions. Otherwise use the bundled copy at
+[`references/AGENT_REPORT_STYLE.md`](references/AGENT_REPORT_STYLE.md) so
+this skill works standalone outside that project.
+
 ## Start
 
 1. Run `sideshow agent-howto` once per session.
@@ -52,6 +69,22 @@ only and still get the model.
 
 Target 3–7 posts. For small work, collapse Background into Orientation.
 Never pad to fill the structure.
+
+End every post — each Sideshow card, or each section when writing to chat —
+with a `TL;DR` line. Write it in ASD-STE100 Simplified Technical English:
+
+- One idea per sentence. Sentence length under about 20 words.
+- Active voice, present tense, one approved verb sense per word (do not
+  swap in a synonym for variety).
+- Name the actor and the action. No strung-together noun chains, no
+  gerunds standing in for a verb.
+- No idioms, no jargon beyond the artifact's actual names (file, symbol,
+  ticket ID), no vague qualifiers ("various", "some", "significant").
+- 1–3 sentences total. State the takeaway and, if the post has one, the
+  single fact a reader must retain.
+
+The TL;DR is a compression of the post above it, not new material. If a
+fact only appears in the TL;DR, move it into the post body.
 
 ### 1. Orientation
 
@@ -183,3 +216,6 @@ silently — the user is never quizzed.
 - Actual artifact names anchor the model without overwhelming it.
 - An expert can skip background while a newcomer can still follow.
 - Feedback is checked and meaningful revisions update existing posts.
+- Every post carries a TL;DR in ASD-STE100 Simplified Technical English,
+  and it compresses the post rather than introducing new facts.
+- Every sentence passes the AGENT_REPORT_STYLE.md No AI slop self-check.
