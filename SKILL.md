@@ -46,11 +46,17 @@ the implementation does without inventing a rationale.
 ## Build the explanation
 
 Use progressive disclosure. Publish one concept per post and add only posts
-that materially improve understanding.
+that materially improve understanding. Open every post with its single
+takeaway in one line; put detail after, so an expert can read first lines
+only and still get the model.
+
+Target 3–7 posts. For small work, collapse Background into Orientation.
+Never pad to fill the structure.
 
 ### 1. Orientation
 
-Answer immediately:
+Open with a headline: the entire work in one sentence of at most ~20 words.
+Then answer immediately:
 
 - What is this?
 - Why does it exist?
@@ -79,9 +85,12 @@ Make the causal model concrete:
 1. State: “We used to X; now we Y because Z.”
 2. Use one tiny representative example with real-looking toy data.
 3. Show old behavior and new behavior explicitly.
-4. Include a diagram or figure when the idea concerns flow, state, structure,
+4. Name the most likely wrong assumption — “you might expect X; actually Y,
+   because Z” — and correct it explicitly. Skip this if no plausible
+   misconception exists; never invent one.
+5. Include a diagram or figure when the idea concerns flow, state, structure,
    ownership, timing, or transformation.
-5. Bridge the idea to the 1–3 most important files, symbols, decisions, or
+6. Bridge the idea to the 1–3 most important files, symbols, decisions, or
    outputs.
 
 Choose examples that expose the reason for the work, not merely the happy path.
@@ -95,22 +104,28 @@ Trace one representative scenario end to end. At each step explain:
 - what state or data changes
 - where it happens
 
+Frame pivotal steps around the question a reader would naturally ask at that
+point (“what happens if the lookup misses here?”) and answer it immediately
+in the same post. Never leave a question hanging for the user to answer.
+
 For a code change, pair the walkthrough with focused code or diff surfaces.
 Show only the lines needed to connect the mental model to the implementation.
 
 ### 5. Consequences
 
-Close the loop with whichever of these matter:
+Answer three questions, each only as far as the evidence supports:
 
-- behavior that is now possible or impossible
-- edge cases and failure behavior
-- trade-offs and rejected alternatives, when evidenced
-- operational or user-visible impact
-- tests and evidence that support the claims
-- what remains unchanged
-- the small set of places to inspect when debugging or extending the work
+- **What is now true?** Behavior that is now possible or impossible,
+  operational or user-visible impact, and what remains unchanged.
+- **What breaks it?** Edge cases, failure behavior, trade-offs and rejected
+  alternatives when evidenced, and where the simplified model from the core
+  intuition stops matching reality.
+- **Where do you go next?** The small set of places to inspect when
+  debugging or extending the work, and the tests or evidence that support
+  the claims above.
 
-End with a compact “mental model to keep” statement, not a recap of every post.
+End with a compact “mental model to keep” statement — one or two sentences a
+reader could repeat a week later — not a recap of every post.
 
 ## Adapt to the artifact
 
@@ -127,14 +142,30 @@ End with a compact “mental model to keep” statement, not a recap of every po
 
 ## Quality bar
 
-Before finishing, verify:
+### Transfer test
+
+Before finishing, answer each question using only the published posts, as if
+you had not done the investigation. If an answer is missing, wrong, or
+requires the source material, revise the posts. This test is run by you,
+silently — the user is never quizzed.
+
+1. **Core idea:** In one sentence, what is this and why does it exist?
+2. **Prediction:** For the central example, what happens now that did not
+   happen before — and what still fails?
+3. **Location:** A bug appears in this behavior tomorrow. Which file or
+   symbol do you open first, and which post says so?
+4. **Misconception:** What would a reasonable reader wrongly assume, and
+   which post corrects it? (Pass vacuously if none exists.)
+5. **Limits:** Where does the simplified model stop matching reality, and
+   is that visible in the posts?
+
+### Craft checks
 
 - The explanation starts with purpose and causality, not implementation detail.
-- Every post teaches one concept and earns its place.
+- Every post opens with its takeaway and teaches one concept that earns its
+  place.
 - Concrete examples replace abstract prose where possible.
 - Visuals reveal a relationship; they are not decorative.
 - Actual artifact names anchor the model without overwhelming it.
-- Important edge cases and uncertainties are visible.
 - An expert can skip background while a newcomer can still follow.
-- The user is never quizzed.
 - Feedback is checked and meaningful revisions update existing posts.

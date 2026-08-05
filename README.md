@@ -27,13 +27,13 @@ The skill calls `sideshow agent-howto` and `sideshow guide` at session start. It
 
 Builds a progressive-disclosure explanation:
 
-1. **Orientation** — what this is, why it exists, what changed, why you care
+1. **Orientation** — one-sentence headline, then what this is, why it exists, what changed, why you care
 2. **Background** — deep (skippable) + narrow (needed for this work)
-3. **Core intuition** — before → after → because, with one concrete example
+3. **Core intuition** — before → after → because, one concrete example, and the likely misconception corrected
 4. **Walkthrough** — one representative scenario end to end
-5. **Consequences** — edge cases, trade-offs, where to look next
+5. **Consequences** — what is now true, what breaks it, where to go next
 
-No quizzes. One concept per sideshow post.
+Every post opens with its one-line takeaway. Before finishing, the agent runs a silent **transfer test** — can the core idea, predicted behavior, bug-location, misconception, and model limits all be answered from the posts alone? If not, it revises. The user is never quizzed.
 
 ## License
 
